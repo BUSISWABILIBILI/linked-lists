@@ -94,6 +94,43 @@ class LinkedList {
     return removedValue;
   }
 
+  insertAt(index, ...values) {
+    const listSize = this.size();
+
+    if (index < 0 || index > listSize) {
+      throw new RangeError("Index out of bounds");
+    }
+
+    if (values.length === 0) {
+      return;
+    }
+
+    if (index === 0) {
+      for (let i = values.length - 1; i >= 0; i--) {
+        this.prepend(values[i]);
+      }
+
+      return;
+    }
+
+    let previousNode = this.headNode;
+
+    for (let i = 0; i < index - 1; i++) {
+      previousNode = previousNode.nextNode;
+    }
+
+    let nextNode = previousNode.nextNode;
+
+    values.forEach((value) => {
+      const newNode = new Node(value);
+
+      previousNode.nextNode = newNode;
+      previousNode = newNode;
+    });
+
+    previousNode.nextNode = nextNode;
+  }
+
   contains(value) {
     let currentNode = this.headNode;
 
