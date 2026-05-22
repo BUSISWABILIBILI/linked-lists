@@ -131,6 +131,30 @@ class LinkedList {
     previousNode.nextNode = nextNode;
   }
 
+  removeAt(index) {
+    const listSize = this.size();
+
+    if (index < 0 || index >= listSize) {
+      throw new RangeError("Index out of bounds");
+    }
+
+    if (index === 0) {
+      return this.pop();
+    }
+
+    let previousNode = this.headNode;
+
+    for (let i = 0; i < index - 1; i++) {
+      previousNode = previousNode.nextNode;
+    }
+
+    const removedNode = previousNode.nextNode;
+
+    previousNode.nextNode = removedNode.nextNode;
+
+    return removedNode.value;
+  }
+
   contains(value) {
     let currentNode = this.headNode;
 

@@ -2,12 +2,13 @@ import LinkedList from "./LinkedList.js";
 
 const list = new LinkedList();
 
-list.append(1);
-list.append(2);
-list.append(3);
+list.append("dog");
+list.append("cat");
+list.append("parrot");
+list.append("hamster");
 
 console.log(list.toString());
 
-list.insertAt(1, 10, 11);
+console.log("Removed:", list.removeAt(2));
 
 console.log(list.toString());
