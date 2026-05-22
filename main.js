@@ -1,5 +1,9 @@
-import Node from "./Node.js";
+import LinkedList from "./LinkedList.js";
 
-const node = new Node("dog");
+const list = new LinkedList();
 
-console.log(node);
+list.append("dog");
+list.append("cat");
+list.append("parrot");
+
+console.log(list.toString());
