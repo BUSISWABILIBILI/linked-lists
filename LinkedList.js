@@ -82,6 +82,18 @@ class LinkedList {
     return undefined;
   }
 
+  pop() {
+    if (this.headNode === null) {
+      return undefined;
+    }
+
+    const removedValue = this.headNode.value;
+
+    this.headNode = this.headNode.nextNode;
+
+    return removedValue;
+  }
+
   contains(value) {
     let currentNode = this.headNode;
 

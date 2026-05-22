@@ -9,12 +9,6 @@ list.append("hamster");
 
 console.log(list.toString());
 
-console.log("At index 2:", list.at(2));
+console.log("Removed:", list.pop());
 
-console.log("Contains cat:", list.contains("cat"));
-
-console.log("Contains snake:", list.contains("snake"));
-
-console.log("Find parrot:", list.findIndex("parrot"));
-
-console.log("Find turtle:", list.findIndex("turtle"));
+console.log(list.toString());
